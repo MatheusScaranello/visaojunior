@@ -176,89 +176,89 @@
         .about-text { flex: 1; }
         .about-text p { margin-bottom: 20px; font-size: 1.05rem; line-height: 1.8; }
 
-        /* --- 6. FORMULÁRIO SUPREMO (AJAX) --- */
+        /* --- 6. CONTATO DIRETO (WHATSAPP CTA) --- */
         .contact-section {
-            background: var(--primary);
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            position: relative;
+            background: linear-gradient(135deg, #001a2c, #002B49);
             color: white;
-            padding: 80px 5%;
+            padding: 100px 5%;
+            text-align: center;
+            overflow: hidden;
         }
 
-        .contact-wrapper {
-            display: flex;
-            max-width: 1100px;
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,193,7,0.15), transparent 70%);
+            top: -100px;
+            right: -100px;
+        }
+
+        .contact-box {
+            position: relative;
+            max-width: 700px;
             margin: 0 auto;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
+            padding: 60px 40px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .contact-box h2 {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #ddd;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
         }
 
         .contact-info {
-            flex: 1;
-            padding: 50px;
-            background: rgba(0, 43, 73, 0.8);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            margin-bottom: 40px;
         }
 
-        .info-box { margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
-        .info-box i { font-size: 1.5rem; color: var(--accent); }
-
-        .contact-form { flex: 1.5; padding: 50px; background: white; }
-        .contact-form h3 { color: var(--primary); margin-bottom: 30px; font-size: 1.8rem; }
-
-        .form-group { position: relative; margin-bottom: 25px; }
-        .form-input {
-            width: 100%; padding: 15px; border: 2px solid #eee;
-            border-radius: 8px; outline: none; transition: 0.3s;
-            font-family: 'Poppins', sans-serif;
-        }
-        .form-input:focus { border-color: var(--primary); }
-        .form-label {
-            position: absolute; left: 15px; top: 15px; color: #999;
-            pointer-events: none; transition: 0.3s; background: white; padding: 0 5px;
-        }
-        .form-input:focus ~ .form-label,
-        .form-input:not(:placeholder-shown) ~ .form-label {
-            top: -10px; font-size: 0.8rem; color: var(--primary); font-weight: 600;
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 0.95rem;
         }
 
-        .btn-submit {
-            width: 100%; padding: 15px; border: none; background: var(--primary);
-            color: white; font-weight: 700; border-radius: 8px; cursor: pointer;
-            transition: 0.3s; font-size: 1rem;
-        }
-        .btn-submit:hover { background: var(--accent); color: var(--primary); }
-
-        /* --- 7. MODAL DE SUCESSO (O SEGREDINHO) --- */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8); z-index: 2000;
-            display: none; align-items: center; justify-content: center;
-            opacity: 0; transition: 0.3s;
-        }
-        .modal-overlay.active { display: flex; opacity: 1; }
-        
-        .modal-box {
-            background: white; padding: 40px; border-radius: 15px; text-align: center;
-            max-width: 400px; transform: scale(0.7); transition: 0.3s;
-        }
-        .modal-overlay.active .modal-box { transform: scale(1); }
-        
-        .modal-icon {
-            font-size: 4rem; color: #28a745; margin-bottom: 20px;
-            animation: bounce 1s;
-        }
-        .modal-box h3 { color: var(--primary); margin-bottom: 10px; }
-        .btn-close-modal {
-            margin-top: 20px; padding: 10px 30px; background: var(--primary);
-            color: white; border: none; border-radius: 50px; cursor: pointer;
+        /* BOTÃO WHATSAPP */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 35px;
+            background: linear-gradient(135deg, #25D366, #1ebe5d);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(37,211,102,0.4);
         }
 
-        /* --- 8. BOTÃO WHATSAPP FLUTUANTE --- */
+        .btn-whatsapp i { font-size: 1.5rem; }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(37,211,102,0.6);
+        }
+
+        .btn-whatsapp:active { transform: scale(0.98); }
+
+        .cta-note {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #bbb;
+        }
+
+        /* --- 7. BOTÃO WHATSAPP FLUTUANTE --- */
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px;
             background-color: #25d366; color: #FFF;
@@ -274,7 +274,6 @@
 
         /* Animações */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-20px);} 60% {transform: translateY(-10px);} }
         
         .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -284,8 +283,9 @@
             .nav-menu { display: none; } /* Simples para demo, ideal seria menu hambúrguer JS */
             .hero h1 { font-size: 2.5rem; }
             .about-container { flex-direction: column-reverse; }
-            .contact-wrapper { flex-direction: column; }
             .logo img { height: 40px; }
+            .contact-box { padding: 40px 20px; }
+            .contact-box h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -307,7 +307,7 @@
 
     <section class="hero" id="hero">
         <div class="hero-content">
-            <h1>Consutoria,<br><span>Visão de Profissional</span></h1>
+            <h1>Consultoria,<br><span>Visão de Profissional</span></h1>
             <p>Há mais de uma década transformando o mercado de Palmeira das Missões com soluções estratégicas e inovação acadêmica.</p>
             <a href="#contato" class="btn-cta" style="padding: 15px 40px; font-size: 1.1rem;">Quero Alavancar meu Negócio</a>
         </div>
@@ -335,7 +335,7 @@
                 </div>
             </div>
             <div class="about-img">
-                <img src="https://i.imgur.com/qk9OCC4.png" alt="Equipe Visão Júnior" onerror="this.src=https://i.imgur.com/qk9OCC4.png">
+                <img src="https://i.imgur.com/qk9OCC4.png" alt="Equipe Visão Júnior" onerror="this.src='https://i.imgur.com/qk9OCC4.png'">
             </div>
         </div>
     </section>
@@ -369,32 +369,23 @@
     </section>
 
     <section class="contact-section reveal" id="contato">
-        <div class="section-header">
-            <h2 class="section-title">Vamos Conversar?</h2>
-        </div>
-        <div class="contact-wrapper">
+        <div class="contact-box">
+            <h2>Fale com um Consultor Agora</h2>
+            <p>Receba uma análise estratégica gratuita e descubra como escalar seu negócio com inteligência.</p>
+
             <div class="contact-info">
-                <div class="info-box">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <strong>Endereço</strong>
-                        <p style="color: #ddd;">Av. Independência, 3751 - UFSM<br>Palmeira das Missões - RS</p>
-                    </div>
-                </div>
-                <div class="info-box">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <strong>Telefone</strong>
-                        <p style="color: #ddd;">(13) 99117-3941</p>
-                    </div>
-                </div>
-                <div class="info-box">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <strong>E-mail</strong>
-                        <p style="color: #ddd;">visaojr@gmail.com</p>
-                    </div>
-                </div>
+                <p><strong>📍 Endereço:</strong> Av. Independência, 3751 - UFSM, Palmeira das Missões - RS</p>
+                <p><strong>📞 Telefone:</strong> (13) 99117-3941</p>
+                <p><strong>✉️ E-mail:</strong> visaojr@gmail.com</p>
+            </div>
+
+            <a href="https://wa.me/5513991173941" target="_blank" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                Chamar no WhatsApp
+            </a>
+
+            <div class="cta-note">
+                Resposta rápida • Atendimento personalizado • Sem compromisso
             </div>
         </div>
     </section>
@@ -404,18 +395,9 @@
         <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">Desenvolvido com excelência e tecnologia.</p>
     </footer>
 
-    <a href=https://i.imgur.com/qk9OCC4.png;ank">
+    <a href="https://wa.me/5513991173941" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <div class="modal-overlay" id="successModal">
-        <div class="modal-box">
-            <i class="fas fa-check-circle modal-icon"></i>
-            <h3>Mensagem Recebida!</h3>
-            <p>Obrigado pelo contato. Nossa equipe de consultores já recebeu sua solicitação e entrará em contato em breve.</p>
-            <button class="btn-close-modal" onclick="closeModal()">Fechar</button>
-        </div>
-    </div>
 
     <script>
         // 1. Efeito Scroll Reveal (Elementos aparecem ao rolar)
